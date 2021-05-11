@@ -22,23 +22,24 @@ namespace final_db_forms.Forms
         private TreeView tv;
         private IContainer components;
         private DataGridView dgv_sf;
-        private llu ds;
+        public llu ds;
         private ToolStrip toolStrip2;
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton2;
         private BindingSource bssf;
         private BindingSource bspos;
         private sales_forceTableAdapter sales_forceTableAdapter;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private DataGridViewComboBoxColumn posi;
+        private ToolStripButton toolStripButton3;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn surname;
+        private DataGridViewComboBoxColumn id_position;
         private TableAdapterManager tads;
 
         public Hierarchy(llu _ds,TableAdapterManager ta_ds)
         {
-            InitializeComponent();
             ds = _ds;
             tads = ta_ds;
+            InitializeComponent();
         }
         private void SubLevel(int parent_id, TreeNode parentNode)
         {
@@ -109,22 +110,22 @@ namespace final_db_forms.Forms
         }
         private void Hierarchy_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ds.sales_force' table. You can move, or remove it, as needed.
-            sales_forceTableAdapter.Fill(ds.sales_force);
             bssf.DataSource = ds.sales_force;
             bspos.DataSource = ds.positions;
-            posi.DataPropertyName = "id_position";
-            posi.DataSource = ds.positions;
-            posi.DisplayMember = "name";
-            posi.ValueMember = "id_position";
+            id_position.DataPropertyName = "id_position";
+            id_position.DataSource = ds.positions;
+            id_position.DisplayMember = "name";
+            id_position.ValueMember = "id_position";
             call_update();
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             var index = tv.SelectedNode == null ? 0 : ds.positions.FindByid_position(Convert.ToInt32(tv.SelectedNode.Name)).id_r;
-            new H_Sub_Add(index).Show();
-            call_update();
-
+            Form frm2 = new H_Sub_Add(index,tads,ds);
+            if (frm2.ShowDialog() == DialogResult.OK)
+            {
+                call_update();
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -135,135 +136,133 @@ namespace final_db_forms.Forms
 
         private void InitializeComponent()
         {
-            components = new Container();
-            var resources = new ComponentResourceManager(typeof(Hierarchy));
-            tv = new TreeView();
-            dgv_sf = new DataGridView();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            surnameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            posi = new DataGridViewComboBoxColumn();
-            bspos = new BindingSource(components);
-            bssf = new BindingSource(components);
-            ds = new llu();
-            toolStrip2 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            sales_forceTableAdapter = new sales_forceTableAdapter();
-            ((ISupportInitialize)(dgv_sf)).BeginInit();
-            ((ISupportInitialize)(bspos)).BeginInit();
-            ((ISupportInitialize)(bssf)).BeginInit();
-            ((ISupportInitialize)(ds)).BeginInit();
-            toolStrip2.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.tv = new System.Windows.Forms.TreeView();
+            this.dgv_sf = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_position = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bspos = new System.Windows.Forms.BindingSource(this.components);
+            this.bssf = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.sales_forceTableAdapter = new final_db_forms.lluTableAdapters.sales_forceTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bspos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bssf)).BeginInit();
+            this.toolStrip2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tv
             // 
-            tv.Location = new Point(12, 12);
-            tv.Name = "tv";
-            tv.Size = new Size(461, 454);
-            tv.TabIndex = 0;
-            tv.NodeMouseClick += tv_NodeMouseClick;
+            this.tv.Location = new System.Drawing.Point(12, 12);
+            this.tv.Name = "tv";
+            this.tv.Size = new System.Drawing.Size(461, 454);
+            this.tv.TabIndex = 0;
+            this.tv.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tv_NodeMouseClick);
             // 
             // dgv_sf
             // 
-            dgv_sf.AutoGenerateColumns = false;
-            dgv_sf.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_sf.Columns.AddRange(nameDataGridViewTextBoxColumn, surnameDataGridViewTextBoxColumn, posi);
-            dgv_sf.DataSource = bssf;
-            dgv_sf.Location = new Point(12, 472);
-            dgv_sf.Name = "dgv_sf";
-            dgv_sf.Size = new Size(461, 313);
-            dgv_sf.TabIndex = 2;
-            dgv_sf.CellBeginEdit += dgv_sf_CellBeginEdit;
+            this.dgv_sf.AutoGenerateColumns = false;
+            this.dgv_sf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sf.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.surname,
+            this.id_position});
+            this.dgv_sf.DataSource = this.bssf;
+            this.dgv_sf.Location = new System.Drawing.Point(12, 472);
+            this.dgv_sf.Name = "dgv_sf";
+            this.dgv_sf.Size = new System.Drawing.Size(461, 313);
+            this.dgv_sf.TabIndex = 2;
+            this.dgv_sf.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_sf_CellBeginEdit);
             // 
-            // nameDataGridViewTextBoxColumn
+            // name
             // 
-            nameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            nameDataGridViewTextBoxColumn.HeaderText = @"name";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
             // 
-            // surnameDataGridViewTextBoxColumn
+            // surname
             // 
-            surnameDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            surnameDataGridViewTextBoxColumn.HeaderText = @"surname";
-            surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.surname.DataPropertyName = "surname";
+            this.surname.HeaderText = "Surname";
+            this.surname.Name = "surname";
             // 
-            // posi
+            // id_position
             // 
-            posi.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            posi.DataPropertyName = "id_position";
-            posi.DataSource = bspos;
-            posi.HeaderText = @"id_position";
-            posi.Name = "posi";
-            posi.Resizable = DataGridViewTriState.True;
-            posi.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // bssf
-            // 
-            bssf.DataMember = "sales_force";
-            bssf.DataSource = ds;
-            // 
-            // ds
-            // 
-            ds.DataSetName = "llu";
-            ds.SchemaSerializationMode = SchemaSerializationMode.IncludeSchema;
+            this.id_position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_position.DataPropertyName = "id_position";
+            this.id_position.DataSource = this.bspos;
+            this.id_position.HeaderText = "Position";
+            this.id_position.Name = "id_position";
+            this.id_position.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // toolStrip2
             // 
-            toolStrip2.Dock = DockStyle.Bottom;
-            toolStrip2.Items.AddRange(new ToolStripItem[] {
-            toolStripButton1,
-            toolStripButton2});
-            toolStrip2.Location = new Point(0, 791);
-            toolStrip2.Name = "toolStrip2";
-            toolStrip2.Size = new Size(488, 25);
-            toolStrip2.TabIndex = 4;
-            toolStrip2.Text = @"toolStrip2";
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 791);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(488, 25);
+            this.toolStrip2.TabIndex = 4;
+            this.toolStrip2.Text = "toolStrip2";
             // 
             // toolStripButton1
             // 
-            toolStripButton1.Alignment = ToolStripItemAlignment.Right;
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton1.Image = ((Image)(resources.GetObject("toolStripButton1.Image")));
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(79, 22);
-            toolStripButton1.Text = @"Add Position";
-            toolStripButton1.Click += toolStripButton1_Click;
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(79, 22);
+            this.toolStripButton1.Text = "Add Position";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
-            toolStripButton2.Alignment = ToolStripItemAlignment.Right;
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton2.Image = ((Image)(resources.GetObject("toolStripButton2.Image")));
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(84, 22);
-            toolStripButton2.Text = @"Save and Quit";
-            toolStripButton2.Click += toolStripButton2_Click;
+            this.toolStripButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(84, 22);
+            this.toolStripButton2.Text = "Save and Quit";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // sales_forceTableAdapter
             // 
-            sales_forceTableAdapter.ClearBeforeFill = true;
+            this.sales_forceTableAdapter.ClearBeforeFill = true;
             // 
             // Hierarchy
             // 
-            ClientSize = new Size(488, 816);
-            Controls.Add(toolStrip2);
-            Controls.Add(dgv_sf);
-            Controls.Add(tv);
-            Name = "Hierarchy";
-            Load += Hierarchy_Load;
-            ((ISupportInitialize)(dgv_sf)).EndInit();
-            ((ISupportInitialize)(bspos)).EndInit();
-            ((ISupportInitialize)(bssf)).EndInit();
-            ((ISupportInitialize)(ds)).EndInit();
-            toolStrip2.ResumeLayout(false);
-            toolStrip2.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.ClientSize = new System.Drawing.Size(488, 816);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.dgv_sf);
+            this.Controls.Add(this.tv);
+            this.Name = "Hierarchy";
+            this.Load += new System.EventHandler(this.Hierarchy_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bspos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bssf)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,6 +281,11 @@ namespace final_db_forms.Forms
             {
                 dgv_sf.CurrentRow.Cells[2].Value = index_number;
             }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            call_update();
         }
     }
 }
