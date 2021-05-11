@@ -88,6 +88,15 @@ namespace final_db_forms.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nothing found in table!.
+        /// </summary>
+        internal static string nothing_found {
+            get {
+                return ResourceManager.GetString("nothing_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         internal static string price {

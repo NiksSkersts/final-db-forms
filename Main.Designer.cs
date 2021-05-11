@@ -35,8 +35,8 @@ namespace final_db_forms
             System.Windows.Forms.TabPage tab_ing;
             System.Windows.Forms.TabPage tab_r;
             System.Windows.Forms.TabPage tab_emp;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.ingredientsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bs_ing = new System.Windows.Forms.BindingSource(this.components);
@@ -72,10 +72,42 @@ namespace final_db_forms
             this.add_sales = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_sales = new System.Windows.Forms.TabPage();
-            this.soldDataGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.emp_list = new System.Windows.Forms.CheckedListBox();
+            this.dgv_sold_ro = new System.Windows.Forms.DataGridView();
+            this.idsalesforceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bs_sf = new System.Windows.Forms.BindingSource(this.components);
+            this.id_sales_force = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.amountDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.soldBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sold_recipe_indexDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.index_range = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.index_to = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.index_from = new System.Windows.Forms.Label();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.n_index_down = new System.Windows.Forms.NumericUpDown();
+            this.n_index_up = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dgv_fake_index = new System.Windows.Forms.DataGridView();
+            this.idsoldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.options_index = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.d_index = new System.Windows.Forms.DateTimePicker();
+            this.dgv_index = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sold_recipe_indexBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sold_recipe_indexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.food_categoriesTableAdapter = new final_db_forms.lluTableAdapters.food_categoriesTableAdapter();
             this.ta_llu = new final_db_forms.lluTableAdapters.TableAdapterManager();
             this.ingredientsTableAdapter = new final_db_forms.lluTableAdapters.ingredientsTableAdapter();
@@ -87,23 +119,34 @@ namespace final_db_forms
             this.sales_forceTableAdapter = new final_db_forms.lluTableAdapters.sales_forceTableAdapter();
             this.sold_recipe_indexTableAdapter = new final_db_forms.lluTableAdapters.sold_recipe_indexTableAdapter();
             this.soldTableAdapter = new final_db_forms.lluTableAdapters.soldTableAdapter();
-            this.bs_sf = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.id_sales_force = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sold_recipe_indexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sold_recipe_indexDataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.filter_by_date = new System.Windows.Forms.DateTimePicker();
+            this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.soldfk1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tab_ing = new System.Windows.Forms.TabPage();
             tab_r = new System.Windows.Forms.TabPage();
             tab_emp = new System.Windows.Forms.TabPage();
@@ -132,14 +175,20 @@ namespace final_db_forms
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_sales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.soldDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sold_ro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.index_range.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_index_down)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_index_up)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_fake_index)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_index)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soldfk1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_ing
@@ -151,7 +200,7 @@ namespace final_db_forms
             tab_ing.Name = "tab_ing";
             tab_ing.Padding = new System.Windows.Forms.Padding(3);
             tab_ing.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            tab_ing.Size = new System.Drawing.Size(1384, 723);
+            tab_ing.Size = new System.Drawing.Size(1024, 723);
             tab_ing.TabIndex = 0;
             tab_ing.Text = "Ingredients";
             tab_ing.UseVisualStyleBackColor = true;
@@ -163,9 +212,9 @@ namespace final_db_forms
             this.ingredientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn1});
             this.ingredientsDataGridView.DataSource = this.bs_ing;
-            this.ingredientsDataGridView.Location = new System.Drawing.Point(258, 6);
+            this.ingredientsDataGridView.Location = new System.Drawing.Point(574, 6);
             this.ingredientsDataGridView.Name = "ingredientsDataGridView";
-            this.ingredientsDataGridView.Size = new System.Drawing.Size(449, 714);
+            this.ingredientsDataGridView.Size = new System.Drawing.Size(447, 714);
             this.ingredientsDataGridView.TabIndex = 2;
             // 
             // nameDataGridViewTextBoxColumn1
@@ -199,14 +248,14 @@ namespace final_db_forms
             this.food_categoriesDataGridView.DataSource = this.bs_fc;
             this.food_categoriesDataGridView.Location = new System.Drawing.Point(8, 6);
             this.food_categoriesDataGridView.Name = "food_categoriesDataGridView";
-            this.food_categoriesDataGridView.Size = new System.Drawing.Size(244, 714);
+            this.food_categoriesDataGridView.Size = new System.Drawing.Size(560, 714);
             this.food_categoriesDataGridView.TabIndex = 2;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = Resources.name;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Category";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // tab_r
@@ -219,7 +268,7 @@ namespace final_db_forms
             tab_r.Location = new System.Drawing.Point(4, 22);
             tab_r.Name = "tab_r";
             tab_r.Padding = new System.Windows.Forms.Padding(3);
-            tab_r.Size = new System.Drawing.Size(1384, 723);
+            tab_r.Size = new System.Drawing.Size(1024, 723);
             tab_r.TabIndex = 1;
             tab_r.Text = "Recipes";
             tab_r.UseVisualStyleBackColor = true;
@@ -240,7 +289,7 @@ namespace final_db_forms
             // 
             this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = Resources.price;
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // bs_price
@@ -297,6 +346,7 @@ namespace final_db_forms
             this.id_n_o_b.DataPropertyName = "id_n_o_b";
             this.id_n_o_b.HeaderText = "id_n_o_b";
             this.id_n_o_b.Name = "id_n_o_b";
+            this.id_n_o_b.Visible = false;
             // 
             // idingredientsDataGridViewTextBoxColumn
             // 
@@ -348,7 +398,7 @@ namespace final_db_forms
             // 
             this.nameDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = Resources.name;
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
             // 
             // tab_emp
@@ -359,7 +409,7 @@ namespace final_db_forms
             tab_emp.Location = new System.Drawing.Point(4, 22);
             tab_emp.Name = "tab_emp";
             tab_emp.Padding = new System.Windows.Forms.Padding(3);
-            tab_emp.Size = new System.Drawing.Size(1384, 723);
+            tab_emp.Size = new System.Drawing.Size(1024, 723);
             tab_emp.TabIndex = 2;
             tab_emp.Text = "Employees";
             tab_emp.UseVisualStyleBackColor = true;
@@ -372,17 +422,17 @@ namespace final_db_forms
             this.nameDataGridViewTextBoxColumn4,
             this.surnameDataGridViewTextBoxColumn});
             this.sales_forceDataGridView.DataSource = this.salesforcefkBindingSource;
-            this.sales_forceDataGridView.Location = new System.Drawing.Point(312, 6);
+            this.sales_forceDataGridView.Location = new System.Drawing.Point(312, 0);
             this.sales_forceDataGridView.Name = "sales_forceDataGridView";
             this.sales_forceDataGridView.ReadOnly = true;
-            this.sales_forceDataGridView.Size = new System.Drawing.Size(434, 711);
+            this.sales_forceDataGridView.Size = new System.Drawing.Size(712, 717);
             this.sales_forceDataGridView.TabIndex = 1;
             // 
             // nameDataGridViewTextBoxColumn4
             // 
             this.nameDataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn4.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = Resources.name;
+            this.nameDataGridViewTextBoxColumn4.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
             this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -390,7 +440,7 @@ namespace final_db_forms
             // 
             this.surnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = Resources.surname;
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -411,10 +461,10 @@ namespace final_db_forms
             this.positionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn3});
             this.positionsDataGridView.DataSource = this.bs_pos;
-            this.positionsDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.positionsDataGridView.Location = new System.Drawing.Point(0, 0);
             this.positionsDataGridView.Name = "positionsDataGridView";
             this.positionsDataGridView.ReadOnly = true;
-            this.positionsDataGridView.Size = new System.Drawing.Size(300, 393);
+            this.positionsDataGridView.Size = new System.Drawing.Size(300, 723);
             this.positionsDataGridView.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn3
@@ -425,6 +475,16 @@ namespace final_db_forms
             this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
             this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // label1
+            // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(294, 42);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(98, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Filter Sales by Date";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -433,7 +493,7 @@ namespace final_db_forms
             this.add_sales});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1392, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1032, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -473,71 +533,402 @@ namespace final_db_forms
             this.tabControl1.Controls.Add(tab_r);
             this.tabControl1.Controls.Add(tab_emp);
             this.tabControl1.Controls.Add(this.tab_sales);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1392, 749);
+            this.tabControl1.Size = new System.Drawing.Size(1032, 749);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tab_sales
             // 
-            this.tab_sales.Controls.Add(this.tableLayoutPanel1);
-            this.tab_sales.Controls.Add(this.sold_recipe_indexDataGridView1);
-            this.tab_sales.Controls.Add(this.soldDataGridView);
-            this.tab_sales.Controls.Add(this.sold_recipe_indexDataGridView);
+            this.tab_sales.AutoScroll = true;
+            this.tab_sales.Controls.Add(this.groupBox1);
+            this.tab_sales.Controls.Add(this.dgv_sold_ro);
             this.tab_sales.Location = new System.Drawing.Point(4, 22);
             this.tab_sales.Name = "tab_sales";
             this.tab_sales.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_sales.Size = new System.Drawing.Size(1384, 723);
+            this.tab_sales.Size = new System.Drawing.Size(1024, 723);
             this.tab_sales.TabIndex = 3;
             this.tab_sales.Text = "Sales";
             this.tab_sales.UseVisualStyleBackColor = true;
             // 
-            // soldDataGridView
+            // groupBox1
             // 
-            this.soldDataGridView.AllowUserToAddRows = false;
-            this.soldDataGridView.AutoGenerateColumns = false;
-            this.soldDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.soldDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.emp_list);
+            this.groupBox1.Location = new System.Drawing.Point(673, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(328, 561);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtering";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "filter";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // emp_list
+            // 
+            this.emp_list.FormattingEnabled = true;
+            this.emp_list.Location = new System.Drawing.Point(146, 19);
+            this.emp_list.Name = "emp_list";
+            this.emp_list.Size = new System.Drawing.Size(176, 364);
+            this.emp_list.TabIndex = 1;
+            // 
+            // dgv_sold_ro
+            // 
+            this.dgv_sold_ro.AllowUserToAddRows = false;
+            this.dgv_sold_ro.AutoGenerateColumns = false;
+            this.dgv_sold_ro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sold_ro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idsalesforceDataGridViewTextBoxColumn,
             this.id_sales_force,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn6});
-            this.soldDataGridView.DataSource = this.soldBindingSource;
-            this.soldDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.soldDataGridView.Name = "soldDataGridView";
-            this.soldDataGridView.RowHeadersVisible = false;
-            this.soldDataGridView.Size = new System.Drawing.Size(441, 727);
-            this.soldDataGridView.TabIndex = 1;
+            this.amountDataGridViewTextBoxColumn2,
+            this.idpriceDataGridViewTextBoxColumn});
+            this.dgv_sold_ro.DataSource = this.soldBindingSource;
+            this.dgv_sold_ro.Location = new System.Drawing.Point(0, 0);
+            this.dgv_sold_ro.Name = "dgv_sold_ro";
+            this.dgv_sold_ro.ReadOnly = true;
+            this.dgv_sold_ro.Size = new System.Drawing.Size(614, 723);
+            this.dgv_sold_ro.TabIndex = 0;
+            // 
+            // idsalesforceDataGridViewTextBoxColumn
+            // 
+            this.idsalesforceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idsalesforceDataGridViewTextBoxColumn.DataPropertyName = "id_sales_force";
+            this.idsalesforceDataGridViewTextBoxColumn.DataSource = this.bs_sf;
+            this.idsalesforceDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.idsalesforceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.idsalesforceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idsalesforceDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.idsalesforceDataGridViewTextBoxColumn.Name = "idsalesforceDataGridViewTextBoxColumn";
+            this.idsalesforceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idsalesforceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idsalesforceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idsalesforceDataGridViewTextBoxColumn.ValueMember = "employee_id";
+            // 
+            // bs_sf
+            // 
+            this.bs_sf.DataMember = "sales_force";
+            this.bs_sf.DataSource = this.llu;
+            // 
+            // id_sales_force
+            // 
+            this.id_sales_force.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_sales_force.DataPropertyName = "id_sales_force";
+            this.id_sales_force.DataSource = this.bs_sf;
+            this.id_sales_force.DisplayMember = "surname";
+            this.id_sales_force.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.id_sales_force.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.id_sales_force.HeaderText = "Surname";
+            this.id_sales_force.Name = "id_sales_force";
+            this.id_sales_force.ReadOnly = true;
+            this.id_sales_force.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_sales_force.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_sales_force.ValueMember = "employee_id";
+            // 
+            // amountDataGridViewTextBoxColumn2
+            // 
+            this.amountDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.amountDataGridViewTextBoxColumn2.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn2.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn2.Name = "amountDataGridViewTextBoxColumn2";
+            this.amountDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // idpriceDataGridViewTextBoxColumn
+            // 
+            this.idpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idpriceDataGridViewTextBoxColumn.DataPropertyName = "id_price";
+            this.idpriceDataGridViewTextBoxColumn.DataSource = this.bs_price;
+            this.idpriceDataGridViewTextBoxColumn.DisplayMember = "price";
+            this.idpriceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.idpriceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idpriceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.idpriceDataGridViewTextBoxColumn.Name = "idpriceDataGridViewTextBoxColumn";
+            this.idpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idpriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idpriceDataGridViewTextBoxColumn.ValueMember = "id_price";
             // 
             // soldBindingSource
             // 
             this.soldBindingSource.DataMember = "sold";
             this.soldBindingSource.DataSource = this.llu;
             // 
-            // sold_recipe_indexDataGridView
+            // tabPage1
             // 
-            this.sold_recipe_indexDataGridView.AutoGenerateColumns = false;
-            this.sold_recipe_indexDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.sold_recipe_indexDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.sold_recipe_indexDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sold_recipe_indexDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.dgv_index);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1024, 723);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Index";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.index_range);
+            this.groupBox2.Controls.Add(this.dgv_fake_index);
+            this.groupBox2.Controls.Add(this.options_index);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(label1);
+            this.groupBox2.Controls.Add(this.d_index);
+            this.groupBox2.Location = new System.Drawing.Point(626, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(398, 723);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtering";
+            // 
+            // index_range
+            // 
+            this.index_range.Controls.Add(this.label7);
+            this.index_range.Controls.Add(this.index_to);
+            this.index_range.Controls.Add(this.label5);
+            this.index_range.Controls.Add(this.checkBox4);
+            this.index_range.Controls.Add(this.index_from);
+            this.index_range.Controls.Add(this.checkBox3);
+            this.index_range.Controls.Add(this.checkBox2);
+            this.index_range.Controls.Add(this.n_index_down);
+            this.index_range.Controls.Add(this.n_index_up);
+            this.index_range.Controls.Add(this.checkBox1);
+            this.index_range.Location = new System.Drawing.Point(6, 119);
+            this.index_range.Name = "index_range";
+            this.index_range.Size = new System.Drawing.Size(292, 117);
+            this.index_range.TabIndex = 7;
+            this.index_range.TabStop = false;
+            this.index_range.Text = "Range";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(155, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "(Selecting both = Invert Range)";
+            // 
+            // index_to
+            // 
+            this.index_to.AutoSize = true;
+            this.index_to.Location = new System.Drawing.Point(199, 51);
+            this.index_to.Name = "index_to";
+            this.index_to.Size = new System.Drawing.Size(19, 13);
+            this.index_to.TabIndex = 9;
+            this.index_to.Text = "to:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(108, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Filter by Amount";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(70, 94);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(58, 17);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Range";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // index_from
+            // 
+            this.index_from.AutoSize = true;
+            this.index_from.Location = new System.Drawing.Point(196, 14);
+            this.index_from.Name = "index_from";
+            this.index_from.Size = new System.Drawing.Size(30, 13);
+            this.index_from.TabIndex = 8;
+            this.index_from.Text = "from:";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(6, 94);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(58, 17);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Equals";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 42);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(76, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Less Than";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // n_index_down
+            // 
+            this.n_index_down.DecimalPlaces = 3;
+            this.n_index_down.Location = new System.Drawing.Point(199, 30);
+            this.n_index_down.Name = "n_index_down";
+            this.n_index_down.Size = new System.Drawing.Size(92, 20);
+            this.n_index_down.TabIndex = 6;
+            // 
+            // n_index_up
+            // 
+            this.n_index_up.DecimalPlaces = 3;
+            this.n_index_up.Location = new System.Drawing.Point(196, 67);
+            this.n_index_up.Name = "n_index_up";
+            this.n_index_up.Size = new System.Drawing.Size(92, 20);
+            this.n_index_up.TabIndex = 2;
+            this.n_index_up.ValueChanged += new System.EventHandler(this.n_index_up_ValueChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(74, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "More than";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // dgv_fake_index
+            // 
+            this.dgv_fake_index.AutoGenerateColumns = false;
+            this.dgv_fake_index.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_fake_index.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idsoldDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn1});
+            this.dgv_fake_index.DataSource = this.soldBindingSource;
+            this.dgv_fake_index.Location = new System.Drawing.Point(12, 526);
+            this.dgv_fake_index.Name = "dgv_fake_index";
+            this.dgv_fake_index.Size = new System.Drawing.Size(203, 201);
+            this.dgv_fake_index.TabIndex = 4;
+            // 
+            // idsoldDataGridViewTextBoxColumn
+            // 
+            this.idsoldDataGridViewTextBoxColumn.DataPropertyName = "id_sold";
+            this.idsoldDataGridViewTextBoxColumn.HeaderText = "id_sold";
+            this.idsoldDataGridViewTextBoxColumn.Name = "idsoldDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn1
+            // 
+            this.amountDataGridViewTextBoxColumn1.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn1.HeaderText = "amount";
+            this.amountDataGridViewTextBoxColumn1.Name = "amountDataGridViewTextBoxColumn1";
+            // 
+            // options_index
+            // 
+            this.options_index.AutoSize = true;
+            this.options_index.Location = new System.Drawing.Point(165, 22);
+            this.options_index.Name = "options_index";
+            this.options_index.Size = new System.Drawing.Size(89, 17);
+            this.options_index.TabIndex = 7;
+            this.options_index.Text = "More Options";
+            this.options_index.UseVisualStyleBackColor = true;
+            this.options_index.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 41);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Filter!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
+            // 
+            // d_index
+            // 
+            this.d_index.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.d_index.Location = new System.Drawing.Point(260, 19);
+            this.d_index.Name = "d_index";
+            this.d_index.Size = new System.Drawing.Size(132, 20);
+            this.d_index.TabIndex = 1;
+            this.d_index.ValueChanged += new System.EventHandler(this.filter_by_date_ValueChanged);
+            // 
+            // dgv_index
+            // 
+            this.dgv_index.AutoGenerateColumns = false;
+            this.dgv_index.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_index.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_index.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_index.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.sold_recipe_indexDataGridView.DataSource = this.sold_recipe_indexBindingSource;
-            this.sold_recipe_indexDataGridView.Location = new System.Drawing.Point(466, 58);
-            this.sold_recipe_indexDataGridView.Name = "sold_recipe_indexDataGridView";
-            this.sold_recipe_indexDataGridView.RowHeadersVisible = false;
-            this.sold_recipe_indexDataGridView.Size = new System.Drawing.Size(434, 666);
-            this.sold_recipe_indexDataGridView.TabIndex = 0;
+            this.dgv_index.DataSource = this.sold_recipe_indexBindingSource;
+            this.dgv_index.Location = new System.Drawing.Point(8, 3);
+            this.dgv_index.Name = "dgv_index";
+            this.dgv_index.RowHeadersVisible = false;
+            this.dgv_index.Size = new System.Drawing.Size(588, 714);
+            this.dgv_index.TabIndex = 0;
+            this.dgv_index.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_index_DataError);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_sold_recipe_index";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id_sold_recipe_index";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_n_o_b";
+            this.dataGridViewTextBoxColumn2.DataSource = this.bs_nob;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "name";
+            this.dataGridViewTextBoxColumn2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "id_n_o_b";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_sold";
+            this.dataGridViewTextBoxColumn3.DataSource = this.soldBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "amount";
+            this.dataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "id_sold";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn4.HeaderText = "date";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // sold_recipe_indexBindingSource
             // 
             this.sold_recipe_indexBindingSource.DataMember = "sold_recipe_index";
             this.sold_recipe_indexBindingSource.DataSource = this.llu;
+            // 
+            // sold_recipe_indexBindingSource1
+            // 
+            this.sold_recipe_indexBindingSource1.DataMember = "sold_recipe_index_fk_1";
+            this.sold_recipe_indexBindingSource1.DataSource = this.soldBindingSource;
             // 
             // food_categoriesTableAdapter
             // 
@@ -594,230 +985,190 @@ namespace final_db_forms
             // 
             this.soldTableAdapter.ClearBeforeFill = true;
             // 
-            // bs_sf
+            // contentsToolStripMenuItem
             // 
-            this.bs_sf.DataMember = "sales_force";
-            this.bs_sf.DataSource = this.llu;
+            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.contentsToolStripMenuItem.Text = "&Contents";
             // 
-            // dataGridViewTextBoxColumn8
+            // indexToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "id_sales_force";
-            this.dataGridViewTextBoxColumn8.DataSource = this.bs_sf;
-            this.dataGridViewTextBoxColumn8.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn8.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewTextBoxColumn8.HeaderText = Resources.name;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn8.ValueMember = "employee_id";
+            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.indexToolStripMenuItem.Text = "&Index";
             // 
-            // id_sales_force
+            // searchToolStripMenuItem
             // 
-            this.id_sales_force.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_sales_force.DataPropertyName = "id_sales_force";
-            this.id_sales_force.DataSource = this.bs_sf;
-            this.id_sales_force.DisplayMember = "surname";
-            this.id_sales_force.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.id_sales_force.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.id_sales_force.HeaderText = Resources.surname;
-            this.id_sales_force.Name = "id_sales_force";
-            this.id_sales_force.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_sales_force.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id_sales_force.ValueMember = "employee_id";
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.searchToolStripMenuItem.Text = "&Search";
             // 
-            // dataGridViewTextBoxColumn7
+            // toolStripSeparator5
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "amount";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 6);
             // 
-            // dataGridViewTextBoxColumn6
+            // aboutToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_price";
-            this.dataGridViewTextBoxColumn6.DataSource = this.bs_price;
-            this.dataGridViewTextBoxColumn6.DisplayMember = "price";
-            this.dataGridViewTextBoxColumn6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewTextBoxColumn6.HeaderText = Resources.price;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn6.ValueMember = "id_price";
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // dataGridViewTextBoxColumn1
+            // customizeToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_sold_recipe_index";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_sold_recipe_index";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customizeToolStripMenuItem.Text = "&Customize";
             // 
-            // dataGridViewTextBoxColumn2
+            // optionsToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_n_o_b";
-            this.dataGridViewTextBoxColumn2.DataSource = this.bs_nob;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewTextBoxColumn2.HeaderText = Resources.name;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "id_n_o_b";
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Text = "&Options";
             // 
-            // dataGridViewTextBoxColumn3
+            // undoToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_sold";
-            this.dataGridViewTextBoxColumn3.DataSource = this.soldBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "amount";
-            this.dataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "id_sold";
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Text = "&Undo";
             // 
-            // dataGridViewTextBoxColumn4
+            // redoToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn4.HeaderText = "date";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redoToolStripMenuItem.Text = "&Redo";
             // 
-            // sold_recipe_indexBindingSource1
+            // toolStripSeparator3
             // 
-            this.sold_recipe_indexBindingSource1.DataMember = "sold_recipe_index_fk_1";
-            this.sold_recipe_indexBindingSource1.DataSource = this.soldBindingSource;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
-            // sold_recipe_indexDataGridView1
+            // cutToolStripMenuItem
             // 
-            this.sold_recipe_indexDataGridView1.AllowUserToAddRows = false;
-            this.sold_recipe_indexDataGridView1.AllowUserToDeleteRows = false;
-            this.sold_recipe_indexDataGridView1.AutoGenerateColumns = false;
-            this.sold_recipe_indexDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.sold_recipe_indexDataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.sold_recipe_indexDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sold_recipe_indexDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.sold_recipe_indexDataGridView1.DataSource = this.sold_recipe_indexBindingSource1;
-            this.sold_recipe_indexDataGridView1.Location = new System.Drawing.Point(466, 0);
-            this.sold_recipe_indexDataGridView1.Name = "sold_recipe_indexDataGridView1";
-            this.sold_recipe_indexDataGridView1.ReadOnly = true;
-            this.sold_recipe_indexDataGridView1.RowHeadersVisible = false;
-            this.sold_recipe_indexDataGridView1.Size = new System.Drawing.Size(434, 49);
-            this.sold_recipe_indexDataGridView1.TabIndex = 2;
+            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
+            this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cutToolStripMenuItem.Text = "Cu&t";
             // 
-            // dataGridViewTextBoxColumn5
+            // copyToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "id_sold_recipe_index";
-            this.dataGridViewTextBoxColumn5.HeaderText = "id_sold_recipe_index";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 131;
+            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
+            this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "&Copy";
             // 
-            // dataGridViewTextBoxColumn9
+            // pasteToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "id_n_o_b";
-            this.dataGridViewTextBoxColumn9.DataSource = this.bs_nob;
-            this.dataGridViewTextBoxColumn9.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn9.HeaderText = Resources.name;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn9.ValueMember = "id_n_o_b";
+            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
+            this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteToolStripMenuItem.Text = "&Paste";
             // 
-            // dataGridViewTextBoxColumn10
+            // toolStripSeparator4
             // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "id_sold";
-            this.dataGridViewTextBoxColumn10.DataSource = this.soldBindingSource;
-            this.dataGridViewTextBoxColumn10.DisplayMember = "amount";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn10.ValueMember = "id_sold";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
-            // dataGridViewTextBoxColumn11
+            // selectAllToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "date";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
-            // tableLayoutPanel1
+            // newToolStripMenuItem
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.60591F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.39409F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(label1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.filter_by_date, 0, 0);
-            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1123, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.47458F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.52542F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 469F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(253, 717);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
+            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Text = "&New";
             // 
-            // label1
+            // openToolStripMenuItem
             // 
-            label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(164, 11);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(75, 26);
-            label1.TabIndex = 0;
-            label1.Text = "Filter Sales by Date";
-            label1.Click += new System.EventHandler(this.label1_Click);
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "&Open";
             // 
-            // filter_by_date
+            // toolStripSeparator
             // 
-            this.filter_by_date.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.filter_by_date.Location = new System.Drawing.Point(3, 14);
-            this.filter_by_date.Name = "filter_by_date";
-            this.filter_by_date.Size = new System.Drawing.Size(144, 20);
-            this.filter_by_date.TabIndex = 1;
-            this.filter_by_date.ValueChanged += new System.EventHandler(this.filter_by_date_ValueChanged);
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Text = "Save &As";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
+            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Text = "&Print";
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
+            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // soldfk1BindingSource
+            // 
+            this.soldfk1BindingSource.DataMember = "sold_fk_1";
+            this.soldfk1BindingSource.DataSource = this.bs_sf;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 776);
+            this.ClientSize = new System.Drawing.Size(1032, 776);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Main";
@@ -848,19 +1199,35 @@ namespace final_db_forms
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tab_sales.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.soldDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sold_ro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.index_range.ResumeLayout(false);
+            this.index_range.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_index_down)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_index_up)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_fake_index)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_index)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soldfk1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+        private System.Windows.Forms.DataGridView dgv_fake_index;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn idsoldDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn1;
+
+        private System.Windows.Forms.Button button1;
+
+        private System.Windows.Forms.Label label7;
 
         #endregion
 
@@ -889,7 +1256,6 @@ namespace final_db_forms
         private System.Windows.Forms.DataGridView nep_ingredientsDataGridView;
         private lluTableAdapters.soldTableAdapter soldTableAdapter;
         private lluTableAdapters.sold_recipe_indexTableAdapter sold_recipe_indexTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bs_fc;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource bs_ing;
@@ -910,27 +1276,66 @@ namespace final_db_forms
         private System.Windows.Forms.BindingSource bs_pos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.TabPage tab_sales;
-        private System.Windows.Forms.DataGridView soldDataGridView;
         private System.Windows.Forms.BindingSource soldBindingSource;
-        private System.Windows.Forms.DataGridView sold_recipe_indexDataGridView;
+        private System.Windows.Forms.DataGridView dgv_index;
         private System.Windows.Forms.BindingSource sold_recipe_indexBindingSource;
         private System.Windows.Forms.BindingSource bs_sf;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewComboBoxColumn id_sales_force;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridView sold_recipe_indexDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.BindingSource sold_recipe_indexBindingSource1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DateTimePicker filter_by_date;
+        private System.Windows.Forms.DateTimePicker d_index;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown n_index_up;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown n_index_down;
+        private System.Windows.Forms.GroupBox index_range;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label index_to;
+        private System.Windows.Forms.Label index_from;
+        private System.Windows.Forms.CheckBox options_index;
+        private System.Windows.Forms.BindingSource soldfk1BindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckedListBox emp_list;
+        private System.Windows.Forms.DataGridView dgv_sold_ro;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idsalesforceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id_sales_force;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idpriceDataGridViewTextBoxColumn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

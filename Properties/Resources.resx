@@ -132,4 +132,7 @@
   <data name="bad_val" xml:space="preserve">
     <value>Bad Value!</value>
   </data>
+  <data name="nothing_found" xml:space="preserve">
+    <value>Nothing found in table!</value>
+  </data>
 </root>
