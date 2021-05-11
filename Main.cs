@@ -1,18 +1,12 @@
-﻿using final_db_forms.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using final_db_forms.Forms;
 
 namespace final_db_forms
 {
     public partial class Main : Form
     {
+        private bool hidden_buttons;
         public Main()
         {
             InitializeComponent();
@@ -22,19 +16,32 @@ namespace final_db_forms
         private void Main_Load(object sender, EventArgs e)
         {
             load_ds();
+            init_dgv();
+            hidden_buttons=hide_buttons();
+        }
+        private void init_dgv()
+        {
+            sold_recipe_indexDataGridView.AutoGenerateColumns = false;
+            dataGridViewTextBoxColumn1.Visible = false;
         }
         private void load_ds()
         {
-            this.nep_ingredientsTableAdapter.Fill(this.llu.nep_ingredients);
-            this.name_of_breadTableAdapter.Fill(this.llu.name_of_bread);
-            this.priceTableAdapter.Fill(this.llu.price);
-            this.positionsTableAdapter.Fill(this.llu.positions);
-            this.food_categoriesTableAdapter.Fill(this.llu.food_categories);
-            this.ingredientsTableAdapter.Fill(this.llu.ingredients);
-            this.recipesTableAdapter.Fill(this.llu.recipes);
-            this.sales_forceTableAdapter.Fill(this.llu.sales_force);
-            this.soldTableAdapter.Fill(this.llu.sold);
-            this.sold_recipe_indexTableAdapter.Fill(this.llu.sold_recipe_index);
+            nep_ingredientsTableAdapter.Fill(llu.nep_ingredients);
+            name_of_breadTableAdapter.Fill(llu.name_of_bread);
+            priceTableAdapter.Fill(llu.price);
+            positionsTableAdapter.Fill(llu.positions);
+            food_categoriesTableAdapter.Fill(llu.food_categories);
+            ingredientsTableAdapter.Fill(llu.ingredients);
+            recipesTableAdapter.Fill(llu.recipes);
+            sales_forceTableAdapter.Fill(llu.sales_force);
+            soldTableAdapter.Fill(llu.sold);
+            sold_recipe_indexTableAdapter.Fill(llu.sold_recipe_index);
+        }
+        private bool hide_buttons()
+        {
+            add_emps.Visible = false;
+            add_sales.Visible = false;
+            return true;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -45,15 +52,45 @@ namespace final_db_forms
         private void toolStripButton2_Click(object sender, EventArgs e)//add employees
         {
             new Hierarchy(llu,ta_llu).Show();
+            
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)//add sales
         {
-            new Add_Sale(ta_llu).Show();
+            var add_sale = new Add_Sale(llu,ta_llu);
+            add_sale.Show();
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tabControl1.SelectedTab == tabControl1.TabPages[0] || tabControl1.SelectedTab == tabControl1.TabPages[1])
+            {
+                if (hidden_buttons!=true)
+                {
+                    hide_buttons();
+                }
+            }
+            else if (tabControl1.SelectedTab == tabControl1.TabPages[2])
+            {
+                add_sales.Visible = false;
+                add_emps.Visible = true;
+                hidden_buttons = false;
+            }
+            else if (tabControl1.SelectedTab == tabControl1.TabPages[3])
+            {
+                add_emps.Visible = false;
+                add_sales.Visible = true;
+            }
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filter_by_date_ValueChanged(object sender, EventArgs e)
+        {
+            sold_recipe_indexBindingSource.Filter = $"date = '{filter_by_date.Value.Date}'";
         }
     }
 }

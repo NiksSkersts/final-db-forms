@@ -1,4 +1,6 @@
 ﻿
+using final_db_forms.Properties;
+
 namespace final_db_forms
 {
     partial class Main
@@ -30,10 +32,11 @@ namespace final_db_forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TabPage tabPage1;
-            System.Windows.Forms.TabPage tab2;
-            System.Windows.Forms.TabPage tabPage2;
+            System.Windows.Forms.TabPage tab_ing;
+            System.Windows.Forms.TabPage tab_r;
+            System.Windows.Forms.TabPage tab_emp;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.Label label1;
             this.ingredientsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bs_ing = new System.Windows.Forms.BindingSource(this.components);
@@ -64,10 +67,15 @@ namespace final_db_forms
             this.positionsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.button_save = new System.Windows.Forms.ToolStripButton();
+            this.add_emps = new System.Windows.Forms.ToolStripButton();
+            this.add_sales = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab_sales = new System.Windows.Forms.TabPage();
+            this.soldDataGridView = new System.Windows.Forms.DataGridView();
+            this.soldBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sold_recipe_indexDataGridView = new System.Windows.Forms.DataGridView();
+            this.sold_recipe_indexBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.food_categoriesTableAdapter = new final_db_forms.lluTableAdapters.food_categoriesTableAdapter();
             this.ta_llu = new final_db_forms.lluTableAdapters.TableAdapterManager();
             this.ingredientsTableAdapter = new final_db_forms.lluTableAdapters.ingredientsTableAdapter();
@@ -79,29 +87,34 @@ namespace final_db_forms
             this.sales_forceTableAdapter = new final_db_forms.lluTableAdapters.sales_forceTableAdapter();
             this.sold_recipe_indexTableAdapter = new final_db_forms.lluTableAdapters.sold_recipe_indexTableAdapter();
             this.soldTableAdapter = new final_db_forms.lluTableAdapters.soldTableAdapter();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.sold_recipe_indexBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sold_recipe_indexDataGridView = new System.Windows.Forms.DataGridView();
-            this.soldBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.soldDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bs_sf = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.id_sales_force = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            tabPage1 = new System.Windows.Forms.TabPage();
-            tab2 = new System.Windows.Forms.TabPage();
-            tabPage2 = new System.Windows.Forms.TabPage();
-            tabPage1.SuspendLayout();
+            this.sold_recipe_indexBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sold_recipe_indexDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.filter_by_date = new System.Windows.Forms.DateTimePicker();
+            tab_ing = new System.Windows.Forms.TabPage();
+            tab_r = new System.Windows.Forms.TabPage();
+            tab_emp = new System.Windows.Forms.TabPage();
+            label1 = new System.Windows.Forms.Label();
+            tab_ing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_ing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_fc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.llu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.food_categoriesDataGridView)).BeginInit();
-            tab2.SuspendLayout();
+            tab_r.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nep_ingredientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_nob)).BeginInit();
@@ -111,33 +124,37 @@ namespace final_db_forms
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_fk_recip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.name_of_breadDataGridView)).BeginInit();
-            tabPage2.SuspendLayout();
+            tab_emp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales_forceDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesforcefkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_pos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).BeginInit();
+            this.tab_sales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soldDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabPage1
+            // tab_ing
             // 
-            tabPage1.AutoScroll = true;
-            tabPage1.Controls.Add(this.ingredientsDataGridView);
-            tabPage1.Controls.Add(this.food_categoriesDataGridView);
-            tabPage1.Location = new System.Drawing.Point(4, 22);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            tabPage1.Size = new System.Drawing.Size(1384, 723);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Ingredients";
-            tabPage1.UseVisualStyleBackColor = true;
+            tab_ing.AutoScroll = true;
+            tab_ing.Controls.Add(this.ingredientsDataGridView);
+            tab_ing.Controls.Add(this.food_categoriesDataGridView);
+            tab_ing.Location = new System.Drawing.Point(4, 22);
+            tab_ing.Name = "tab_ing";
+            tab_ing.Padding = new System.Windows.Forms.Padding(3);
+            tab_ing.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            tab_ing.Size = new System.Drawing.Size(1384, 723);
+            tab_ing.TabIndex = 0;
+            tab_ing.Text = "Ingredients";
+            tab_ing.UseVisualStyleBackColor = true;
             // 
             // ingredientsDataGridView
             // 
@@ -189,23 +206,23 @@ namespace final_db_forms
             // 
             this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = Resources.name;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // tab2
+            // tab_r
             // 
-            tab2.AutoScroll = true;
-            tab2.Controls.Add(this.nep_ingredientsDataGridView);
-            tab2.Controls.Add(this.priceDataGridView);
-            tab2.Controls.Add(this.recipesDataGridView);
-            tab2.Controls.Add(this.name_of_breadDataGridView);
-            tab2.Location = new System.Drawing.Point(4, 22);
-            tab2.Name = "tab2";
-            tab2.Padding = new System.Windows.Forms.Padding(3);
-            tab2.Size = new System.Drawing.Size(1384, 723);
-            tab2.TabIndex = 1;
-            tab2.Text = "Recipes";
-            tab2.UseVisualStyleBackColor = true;
+            tab_r.AutoScroll = true;
+            tab_r.Controls.Add(this.nep_ingredientsDataGridView);
+            tab_r.Controls.Add(this.priceDataGridView);
+            tab_r.Controls.Add(this.recipesDataGridView);
+            tab_r.Controls.Add(this.name_of_breadDataGridView);
+            tab_r.Location = new System.Drawing.Point(4, 22);
+            tab_r.Name = "tab_r";
+            tab_r.Padding = new System.Windows.Forms.Padding(3);
+            tab_r.Size = new System.Drawing.Size(1384, 723);
+            tab_r.TabIndex = 1;
+            tab_r.Text = "Recipes";
+            tab_r.UseVisualStyleBackColor = true;
             // 
             // nep_ingredientsDataGridView
             // 
@@ -223,7 +240,7 @@ namespace final_db_forms
             // 
             this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = Resources.price;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // bs_price
@@ -331,21 +348,21 @@ namespace final_db_forms
             // 
             this.nameDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = Resources.name;
             this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
             // 
-            // tabPage2
+            // tab_emp
             // 
-            tabPage2.AutoScroll = true;
-            tabPage2.Controls.Add(this.sales_forceDataGridView);
-            tabPage2.Controls.Add(this.positionsDataGridView);
-            tabPage2.Location = new System.Drawing.Point(4, 22);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            tabPage2.Size = new System.Drawing.Size(1384, 723);
-            tabPage2.TabIndex = 2;
-            tabPage2.Text = "Employees";
-            tabPage2.UseVisualStyleBackColor = true;
+            tab_emp.AutoScroll = true;
+            tab_emp.Controls.Add(this.sales_forceDataGridView);
+            tab_emp.Controls.Add(this.positionsDataGridView);
+            tab_emp.Location = new System.Drawing.Point(4, 22);
+            tab_emp.Name = "tab_emp";
+            tab_emp.Padding = new System.Windows.Forms.Padding(3);
+            tab_emp.Size = new System.Drawing.Size(1384, 723);
+            tab_emp.TabIndex = 2;
+            tab_emp.Text = "Employees";
+            tab_emp.UseVisualStyleBackColor = true;
             // 
             // sales_forceDataGridView
             // 
@@ -365,7 +382,7 @@ namespace final_db_forms
             // 
             this.nameDataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn4.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn4.HeaderText = Resources.name;
             this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
             this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
             // 
@@ -373,7 +390,7 @@ namespace final_db_forms
             // 
             this.surnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = Resources.surname;
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -411,57 +428,116 @@ namespace final_db_forms
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.button_save,
+            this.add_emps,
+            this.add_sales});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1392, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // button_save
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(38, 22);
-            this.toolStripButton1.Text = "Save!";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.button_save.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.button_save.Image = ((System.Drawing.Image)(resources.GetObject("button_save.Image")));
+            this.button_save.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(38, 22);
+            this.button_save.Text = "Save!";
+            this.button_save.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
+            // add_emps
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(93, 22);
-            this.toolStripButton2.Text = "Add Employees";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.add_emps.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.add_emps.Image = ((System.Drawing.Image)(resources.GetObject("add_emps.Image")));
+            this.add_emps.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.add_emps.Name = "add_emps";
+            this.add_emps.Size = new System.Drawing.Size(93, 22);
+            this.add_emps.Text = "Add Employees";
+            this.add_emps.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton3
+            // add_sales
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(62, 22);
-            this.toolStripButton3.Text = "Add Sales";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.add_sales.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.add_sales.Image = ((System.Drawing.Image)(resources.GetObject("add_sales.Image")));
+            this.add_sales.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.add_sales.Name = "add_sales";
+            this.add_sales.Size = new System.Drawing.Size(62, 22);
+            this.add_sales.Text = "Add Sales";
+            this.add_sales.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(tabPage1);
-            this.tabControl1.Controls.Add(tab2);
-            this.tabControl1.Controls.Add(tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(tab_ing);
+            this.tabControl1.Controls.Add(tab_r);
+            this.tabControl1.Controls.Add(tab_emp);
+            this.tabControl1.Controls.Add(this.tab_sales);
             this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1392, 749);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tab_sales
+            // 
+            this.tab_sales.Controls.Add(this.tableLayoutPanel1);
+            this.tab_sales.Controls.Add(this.sold_recipe_indexDataGridView1);
+            this.tab_sales.Controls.Add(this.soldDataGridView);
+            this.tab_sales.Controls.Add(this.sold_recipe_indexDataGridView);
+            this.tab_sales.Location = new System.Drawing.Point(4, 22);
+            this.tab_sales.Name = "tab_sales";
+            this.tab_sales.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_sales.Size = new System.Drawing.Size(1384, 723);
+            this.tab_sales.TabIndex = 3;
+            this.tab_sales.Text = "Sales";
+            this.tab_sales.UseVisualStyleBackColor = true;
+            // 
+            // soldDataGridView
+            // 
+            this.soldDataGridView.AllowUserToAddRows = false;
+            this.soldDataGridView.AutoGenerateColumns = false;
+            this.soldDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.soldDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.id_sales_force,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn6});
+            this.soldDataGridView.DataSource = this.soldBindingSource;
+            this.soldDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.soldDataGridView.Name = "soldDataGridView";
+            this.soldDataGridView.RowHeadersVisible = false;
+            this.soldDataGridView.Size = new System.Drawing.Size(441, 727);
+            this.soldDataGridView.TabIndex = 1;
+            // 
+            // soldBindingSource
+            // 
+            this.soldBindingSource.DataMember = "sold";
+            this.soldBindingSource.DataSource = this.llu;
+            // 
+            // sold_recipe_indexDataGridView
+            // 
+            this.sold_recipe_indexDataGridView.AutoGenerateColumns = false;
+            this.sold_recipe_indexDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.sold_recipe_indexDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.sold_recipe_indexDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sold_recipe_indexDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.sold_recipe_indexDataGridView.DataSource = this.sold_recipe_indexBindingSource;
+            this.sold_recipe_indexDataGridView.Location = new System.Drawing.Point(466, 58);
+            this.sold_recipe_indexDataGridView.Name = "sold_recipe_indexDataGridView";
+            this.sold_recipe_indexDataGridView.RowHeadersVisible = false;
+            this.sold_recipe_indexDataGridView.Size = new System.Drawing.Size(434, 666);
+            this.sold_recipe_indexDataGridView.TabIndex = 0;
+            // 
+            // sold_recipe_indexBindingSource
+            // 
+            this.sold_recipe_indexBindingSource.DataMember = "sold_recipe_index";
+            this.sold_recipe_indexBindingSource.DataSource = this.llu;
             // 
             // food_categoriesTableAdapter
             // 
@@ -518,82 +594,59 @@ namespace final_db_forms
             // 
             this.soldTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPage3
+            // bs_sf
             // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.soldDataGridView);
-            this.tabPage3.Controls.Add(this.sold_recipe_indexDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1384, 723);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // sold_recipe_indexBindingSource
-            // 
-            this.sold_recipe_indexBindingSource.DataMember = "sold_recipe_index";
-            this.sold_recipe_indexBindingSource.DataSource = this.llu;
-            // 
-            // sold_recipe_indexDataGridView
-            // 
-            this.sold_recipe_indexDataGridView.AutoGenerateColumns = false;
-            this.sold_recipe_indexDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sold_recipe_indexDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.sold_recipe_indexDataGridView.DataSource = this.sold_recipe_indexBindingSource;
-            this.sold_recipe_indexDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.sold_recipe_indexDataGridView.Name = "sold_recipe_indexDataGridView";
-            this.sold_recipe_indexDataGridView.Size = new System.Drawing.Size(434, 723);
-            this.sold_recipe_indexDataGridView.TabIndex = 0;
-            // 
-            // soldBindingSource
-            // 
-            this.soldBindingSource.DataMember = "sold";
-            this.soldBindingSource.DataSource = this.llu;
-            // 
-            // soldDataGridView
-            // 
-            this.soldDataGridView.AutoGenerateColumns = false;
-            this.soldDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.soldDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.soldDataGridView.DataSource = this.soldBindingSource;
-            this.soldDataGridView.Location = new System.Drawing.Point(854, 0);
-            this.soldDataGridView.Name = "soldDataGridView";
-            this.soldDataGridView.Size = new System.Drawing.Size(441, 727);
-            this.soldDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "id_sold";
-            this.dataGridViewTextBoxColumn5.HeaderText = "id_sold";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_price";
-            this.dataGridViewTextBoxColumn6.HeaderText = "id_price";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "amount";
-            this.dataGridViewTextBoxColumn7.HeaderText = "amount";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.bs_sf.DataMember = "sales_force";
+            this.bs_sf.DataSource = this.llu;
             // 
             // dataGridViewTextBoxColumn8
             // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "id_sales_force";
-            this.dataGridViewTextBoxColumn8.HeaderText = "id_sales_force";
+            this.dataGridViewTextBoxColumn8.DataSource = this.bs_sf;
+            this.dataGridViewTextBoxColumn8.DisplayMember = "name";
+            this.dataGridViewTextBoxColumn8.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewTextBoxColumn8.HeaderText = Resources.name;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn8.ValueMember = "employee_id";
+            // 
+            // id_sales_force
+            // 
+            this.id_sales_force.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_sales_force.DataPropertyName = "id_sales_force";
+            this.id_sales_force.DataSource = this.bs_sf;
+            this.id_sales_force.DisplayMember = "surname";
+            this.id_sales_force.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.id_sales_force.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.id_sales_force.HeaderText = Resources.surname;
+            this.id_sales_force.Name = "id_sales_force";
+            this.id_sales_force.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_sales_force.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_sales_force.ValueMember = "employee_id";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "amount";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "id_price";
+            this.dataGridViewTextBoxColumn6.DataSource = this.bs_price;
+            this.dataGridViewTextBoxColumn6.DisplayMember = "price";
+            this.dataGridViewTextBoxColumn6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewTextBoxColumn6.HeaderText = Resources.price;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn6.ValueMember = "id_price";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -604,10 +657,13 @@ namespace final_db_forms
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "id_n_o_b";
             this.dataGridViewTextBoxColumn2.DataSource = this.bs_nob;
             this.dataGridViewTextBoxColumn2.DisplayMember = "name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewTextBoxColumn2.HeaderText = Resources.name;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -615,9 +671,12 @@ namespace final_db_forms
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "id_sold";
             this.dataGridViewTextBoxColumn3.DataSource = this.soldBindingSource;
             this.dataGridViewTextBoxColumn3.DisplayMember = "amount";
+            this.dataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dataGridViewTextBoxColumn3.HeaderText = "Amount";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -626,9 +685,133 @@ namespace final_db_forms
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "date";
             this.dataGridViewTextBoxColumn4.HeaderText = "date";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // sold_recipe_indexBindingSource1
+            // 
+            this.sold_recipe_indexBindingSource1.DataMember = "sold_recipe_index_fk_1";
+            this.sold_recipe_indexBindingSource1.DataSource = this.soldBindingSource;
+            // 
+            // sold_recipe_indexDataGridView1
+            // 
+            this.sold_recipe_indexDataGridView1.AllowUserToAddRows = false;
+            this.sold_recipe_indexDataGridView1.AllowUserToDeleteRows = false;
+            this.sold_recipe_indexDataGridView1.AutoGenerateColumns = false;
+            this.sold_recipe_indexDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.sold_recipe_indexDataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.sold_recipe_indexDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sold_recipe_indexDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.sold_recipe_indexDataGridView1.DataSource = this.sold_recipe_indexBindingSource1;
+            this.sold_recipe_indexDataGridView1.Location = new System.Drawing.Point(466, 0);
+            this.sold_recipe_indexDataGridView1.Name = "sold_recipe_indexDataGridView1";
+            this.sold_recipe_indexDataGridView1.ReadOnly = true;
+            this.sold_recipe_indexDataGridView1.RowHeadersVisible = false;
+            this.sold_recipe_indexDataGridView1.Size = new System.Drawing.Size(434, 49);
+            this.sold_recipe_indexDataGridView1.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "id_sold_recipe_index";
+            this.dataGridViewTextBoxColumn5.HeaderText = "id_sold_recipe_index";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 131;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "id_n_o_b";
+            this.dataGridViewTextBoxColumn9.DataSource = this.bs_nob;
+            this.dataGridViewTextBoxColumn9.DisplayMember = "name";
+            this.dataGridViewTextBoxColumn9.HeaderText = Resources.name;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn9.ValueMember = "id_n_o_b";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "id_sold";
+            this.dataGridViewTextBoxColumn10.DataSource = this.soldBindingSource;
+            this.dataGridViewTextBoxColumn10.DisplayMember = "amount";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn10.ValueMember = "id_sold";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "date";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.60591F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.39409F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(label1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.filter_by_date, 0, 0);
+            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1123, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.47458F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.52542F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 469F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(253, 717);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(164, 11);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(75, 26);
+            label1.TabIndex = 0;
+            label1.Text = "Filter Sales by Date";
+            label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // filter_by_date
+            // 
+            this.filter_by_date.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filter_by_date.Location = new System.Drawing.Point(3, 14);
+            this.filter_by_date.Name = "filter_by_date";
+            this.filter_by_date.Size = new System.Drawing.Size(144, 20);
+            this.filter_by_date.TabIndex = 1;
+            this.filter_by_date.ValueChanged += new System.EventHandler(this.filter_by_date_ValueChanged);
             // 
             // Main
             // 
@@ -640,13 +823,13 @@ namespace final_db_forms
             this.Name = "Main";
             this.Text = "SIA \"Random Bakery on Liela Iela\"";
             this.Load += new System.EventHandler(this.Main_Load);
-            tabPage1.ResumeLayout(false);
+            tab_ing.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_ing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_fc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.llu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.food_categoriesDataGridView)).EndInit();
-            tab2.ResumeLayout(false);
+            tab_r.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nep_ingredientsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_nob)).EndInit();
@@ -656,7 +839,7 @@ namespace final_db_forms
             ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_fk_recip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.name_of_breadDataGridView)).EndInit();
-            tabPage2.ResumeLayout(false);
+            tab_emp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sales_forceDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesforcefkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_pos)).EndInit();
@@ -664,11 +847,16 @@ namespace final_db_forms
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).EndInit();
+            this.tab_sales.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.soldDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sold_recipe_indexDataGridView1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,9 +865,9 @@ namespace final_db_forms
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton button_save;
+        private System.Windows.Forms.ToolStripButton add_emps;
+        private System.Windows.Forms.ToolStripButton add_sales;
         private llu llu;
         private lluTableAdapters.food_categoriesTableAdapter food_categoriesTableAdapter;
         private lluTableAdapters.TableAdapterManager ta_llu;
@@ -721,19 +909,28 @@ namespace final_db_forms
         private System.Windows.Forms.BindingSource salesforcefkBindingSource;
         private System.Windows.Forms.BindingSource bs_pos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tab_sales;
         private System.Windows.Forms.DataGridView soldDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.BindingSource soldBindingSource;
         private System.Windows.Forms.DataGridView sold_recipe_indexDataGridView;
+        private System.Windows.Forms.BindingSource sold_recipe_indexBindingSource;
+        private System.Windows.Forms.BindingSource bs_sf;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id_sales_force;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.BindingSource sold_recipe_indexBindingSource;
+        private System.Windows.Forms.DataGridView sold_recipe_indexDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource sold_recipe_indexBindingSource1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DateTimePicker filter_by_date;
     }
 }
 
