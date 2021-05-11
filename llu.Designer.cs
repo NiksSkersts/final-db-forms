@@ -754,10 +754,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public food_categoriesRow Addfood_categoriesRow(int id_category, string name) {
+            public food_categoriesRow Addfood_categoriesRow(string name) {
                 food_categoriesRow rowfood_categoriesRow = ((food_categoriesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_category,
+                        null,
                         name};
                 rowfood_categoriesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfood_categoriesRow);
@@ -801,6 +801,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnname);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_category}, true));
+                this.columnid_category.AutoIncrement = true;
+                this.columnid_category.AutoIncrementSeed = 1;
                 this.columnid_category.AllowDBNull = false;
                 this.columnid_category.Unique = true;
                 this.columnname.AllowDBNull = false;
@@ -1037,10 +1039,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ingredientsRow AddingredientsRow(int id_ingredients, string name, food_categoriesRow parentfood_categoriesRowByingredients_fk) {
+            public ingredientsRow AddingredientsRow(string name, food_categoriesRow parentfood_categoriesRowByingredients_fk) {
                 ingredientsRow rowingredientsRow = ((ingredientsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_ingredients,
+                        null,
                         name,
                         null};
                 if ((parentfood_categoriesRowByingredients_fk != null)) {
@@ -1091,6 +1093,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columncategory_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_ingredients}, true));
+                this.columnid_ingredients.AutoIncrement = true;
+                this.columnid_ingredients.AutoIncrementSeed = 1;
                 this.columnid_ingredients.AllowDBNull = false;
                 this.columnid_ingredients.Unique = true;
                 this.columnname.AllowDBNull = false;
@@ -1319,10 +1323,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public name_of_breadRow Addname_of_breadRow(int id_n_o_b, string name) {
+            public name_of_breadRow Addname_of_breadRow(string name) {
                 name_of_breadRow rowname_of_breadRow = ((name_of_breadRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_n_o_b,
+                        null,
                         name};
                 rowname_of_breadRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowname_of_breadRow);
@@ -1368,6 +1372,8 @@ namespace final_db_forms {
                                 this.columnname}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
                                 this.columnid_n_o_b}, true));
+                this.columnid_n_o_b.AutoIncrement = true;
+                this.columnid_n_o_b.AutoIncrementSeed = 1;
                 this.columnid_n_o_b.AllowDBNull = false;
                 this.columnid_n_o_b.Unique = true;
                 this.columnname.AllowDBNull = false;
@@ -1596,10 +1602,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public nep_ingredientsRow Addnep_ingredientsRow(int id_nep_ing, double amount) {
+            public nep_ingredientsRow Addnep_ingredientsRow(double amount) {
                 nep_ingredientsRow rownep_ingredientsRow = ((nep_ingredientsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_nep_ing,
+                        null,
                         amount};
                 rownep_ingredientsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rownep_ingredientsRow);
@@ -1643,6 +1649,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnamount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_nep_ing}, true));
+                this.columnid_nep_ing.AutoIncrement = true;
+                this.columnid_nep_ing.AutoIncrementSeed = 1;
                 this.columnid_nep_ing.AllowDBNull = false;
                 this.columnid_nep_ing.Unique = true;
                 this.columnamount.AllowDBNull = false;
@@ -1879,10 +1887,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public positionsRow AddpositionsRow(int id_position, string name, int id_r) {
+            public positionsRow AddpositionsRow(string name, int id_r) {
                 positionsRow rowpositionsRow = ((positionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_position,
+                        null,
                         name,
                         id_r};
                 rowpositionsRow.ItemArray = columnValuesArray;
@@ -1930,10 +1938,14 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnid_r);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_position}, true));
+                this.columnid_position.AutoIncrement = true;
+                this.columnid_position.AutoIncrementSeed = 1;
                 this.columnid_position.AllowDBNull = false;
                 this.columnid_position.Unique = true;
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 20;
+                this.columnid_r.AutoIncrementSeed = -1;
+                this.columnid_r.AutoIncrementStep = -1;
                 this.columnid_r.AllowDBNull = false;
             }
             
@@ -2168,10 +2180,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public priceRow AddpriceRow(int id_price, decimal price, name_of_breadRow parentname_of_breadRowByprice_fk) {
+            public priceRow AddpriceRow(decimal price, name_of_breadRow parentname_of_breadRowByprice_fk) {
                 priceRow rowpriceRow = ((priceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_price,
+                        null,
                         price,
                         null};
                 if ((parentname_of_breadRowByprice_fk != null)) {
@@ -2222,6 +2234,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnid_n_o_b);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_price}, true));
+                this.columnid_price.AutoIncrement = true;
+                this.columnid_price.AutoIncrementSeed = 1;
                 this.columnid_price.AllowDBNull = false;
                 this.columnid_price.Unique = true;
                 this.columnprice.AllowDBNull = false;
@@ -2469,10 +2483,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public recipesRow AddrecipesRow(int id_recipes, name_of_breadRow parentname_of_breadRowByrecipes_fk_1, ingredientsRow parentingredientsRowByrecipes_fk, nep_ingredientsRow parentnep_ingredientsRowByrecipes_fk_2) {
+            public recipesRow AddrecipesRow(name_of_breadRow parentname_of_breadRowByrecipes_fk_1, ingredientsRow parentingredientsRowByrecipes_fk, nep_ingredientsRow parentnep_ingredientsRowByrecipes_fk_2) {
                 recipesRow rowrecipesRow = ((recipesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_recipes,
+                        null,
                         null,
                         null,
                         null};
@@ -2533,6 +2547,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnid_nep_ing);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_recipes}, true));
+                this.columnid_recipes.AutoIncrement = true;
+                this.columnid_recipes.AutoIncrementSeed = 1;
                 this.columnid_recipes.AllowDBNull = false;
                 this.columnid_recipes.Unique = true;
                 this.columnid_n_o_b.AllowDBNull = false;
@@ -2780,10 +2796,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sales_forceRow Addsales_forceRow(int employee_id, string name, string surname, positionsRow parentpositionsRowBysales_force_fk) {
+            public sales_forceRow Addsales_forceRow(string name, string surname, positionsRow parentpositionsRowBysales_force_fk) {
                 sales_forceRow rowsales_forceRow = ((sales_forceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        employee_id,
+                        null,
                         name,
                         surname,
                         null};
@@ -2838,6 +2854,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnid_position);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnemployee_id}, true));
+                this.columnemployee_id.AutoIncrement = true;
+                this.columnemployee_id.AutoIncrementSeed = 1;
                 this.columnemployee_id.AllowDBNull = false;
                 this.columnemployee_id.Unique = true;
                 this.columnname.MaxLength = 20;
@@ -3085,10 +3103,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public soldRow AddsoldRow(int id_sold, priceRow parentpriceRowBysold_fk, double amount, sales_forceRow parentsales_forceRowBysold_fk_1) {
+            public soldRow AddsoldRow(priceRow parentpriceRowBysold_fk, double amount, sales_forceRow parentsales_forceRowBysold_fk_1) {
                 soldRow rowsoldRow = ((soldRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_sold,
+                        null,
                         null,
                         amount,
                         null};
@@ -3146,6 +3164,8 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnid_sales_force);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_sold}, true));
+                this.columnid_sold.AutoIncrement = true;
+                this.columnid_sold.AutoIncrementSeed = 1;
                 this.columnid_sold.AllowDBNull = false;
                 this.columnid_sold.Unique = true;
                 this.columnid_price.AllowDBNull = false;
@@ -3393,10 +3413,10 @@ namespace final_db_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sold_recipe_indexRow Addsold_recipe_indexRow(int id_sold_recipe_index, name_of_breadRow parentname_of_breadRowBysold_recipe_index_fk, soldRow parentsoldRowBysold_recipe_index_fk_1, System.DateTime date) {
+            public sold_recipe_indexRow Addsold_recipe_indexRow(name_of_breadRow parentname_of_breadRowBysold_recipe_index_fk, soldRow parentsoldRowBysold_recipe_index_fk_1, System.DateTime date) {
                 sold_recipe_indexRow rowsold_recipe_indexRow = ((sold_recipe_indexRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_sold_recipe_index,
+                        null,
                         null,
                         null,
                         date};
@@ -3452,16 +3472,15 @@ namespace final_db_forms {
                 base.Columns.Add(this.columnid_sold);
                 this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_n_o_b}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
                                 this.columnid_sold}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint3", new global::System.Data.DataColumn[] {
                                 this.columnid_sold_recipe_index}, true));
+                this.columnid_sold_recipe_index.AutoIncrement = true;
+                this.columnid_sold_recipe_index.AutoIncrementSeed = 1;
                 this.columnid_sold_recipe_index.AllowDBNull = false;
                 this.columnid_sold_recipe_index.Unique = true;
                 this.columnid_n_o_b.AllowDBNull = false;
-                this.columnid_n_o_b.Unique = true;
                 this.columnid_sold.AllowDBNull = false;
                 this.columnid_sold.Unique = true;
                 this.columndate.AllowDBNull = false;
