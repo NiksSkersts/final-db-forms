@@ -29,6 +29,7 @@ namespace final_db_forms
             dataGridViewTextBoxColumn1.Visible = false;
             dgv_fake_index.Visible = false;
             id_n_o_b.Visible = false;
+            dataGridViewTextBoxColumn1.Visible = false;
         }
         private void load_ds()
         {
@@ -103,10 +104,6 @@ namespace final_db_forms
             reset_filters();
 
         }
-        private void filter_by_date_ValueChanged(object sender, EventArgs e)
-        {
-            apply_filter_by_date();
-        }
         private void apply_filter_by_date()
         {
             if (options_index.CheckState != CheckState.Checked)
@@ -118,18 +115,6 @@ namespace final_db_forms
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
             hide_filtering_index();
-        }
-        private void button1_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                apply_filtering_Index();
-            }
-            catch
-            {
-                reset_filters();
-            }
-            
         }
         private void apply_filtering_Index()
         {
@@ -356,6 +341,24 @@ namespace final_db_forms
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             auto_check();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (options_index.CheckState==CheckState.Checked)
+                {
+                    apply_filtering_Index();
+                }
+                else
+                {
+                    apply_filter_by_date();
+                }
+            }
+            catch
+            {
+                reset_filters();
+            }
         }
     }
 }

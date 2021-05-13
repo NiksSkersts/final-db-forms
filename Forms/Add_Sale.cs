@@ -89,7 +89,7 @@ namespace final_db_forms.Forms
             newRow = llu.sold_recipe_index.Newsold_recipe_indexRow();
             newRow.id_sold = prev_sold_row_index;
             newRow.id_n_o_b = get_nob();
-            newRow.date = DateTime.Now;
+            newRow.date = DateTime.Now.Date;
             llu.sold_recipe_index.Addsold_recipe_indexRow(newRow);
             //return (int)llu.sold_recipe_index.AsEnumerable().Last().ItemArray[0];
         }

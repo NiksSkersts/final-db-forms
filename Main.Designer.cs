@@ -868,7 +868,7 @@ namespace final_db_forms
             this.button1.TabIndex = 10;
             this.button1.Text = "Filter!";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // d_index
             // 
@@ -877,7 +877,6 @@ namespace final_db_forms
             this.d_index.Name = "d_index";
             this.d_index.Size = new System.Drawing.Size(132, 20);
             this.d_index.TabIndex = 1;
-            this.d_index.ValueChanged += new System.EventHandler(this.filter_by_date_ValueChanged);
             // 
             // dgv_index
             // 
