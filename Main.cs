@@ -21,6 +21,7 @@ namespace final_db_forms
             hidden_buttons=hide_buttons();
             hide_filtering_index();
             init_listbox();
+            groupBox3.Visible = false;
         }
         private void init_dgv()
         {
@@ -51,14 +52,17 @@ namespace final_db_forms
         {
             if (options_index.Checked == false)
             {
-                index_to.Visible = false;
                 index_range.Visible = false;
             }
             else
             {
-                index_to.Visible = true;
                 index_range.Visible = true;
             }
+        }
+        private void reset_filters()
+        {
+            soldBindingSource.RemoveFilter();
+            sold_recipe_indexBindingSource.RemoveFilter();
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -94,20 +98,26 @@ namespace final_db_forms
                 add_sales.Visible = true;
             }
             
+            ta_llu.UpdateAll(llu);
+            reset_filters();
+
         }
         private void filter_by_date_ValueChanged(object sender, EventArgs e)
         {
-            sold_recipe_indexBindingSource.Filter = $"date = '{d_index.Value.Date}'";
+            apply_filter_by_date();
         }
-        #region(filtering_index)
+        private void apply_filter_by_date()
+        {
+            if (options_index.CheckState != CheckState.Checked)
+            {
+                sold_recipe_indexBindingSource.Filter = $"date = '{d_index.Value.Date}'";
+            }
+            else { return; }
+        }
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
             hide_filtering_index();
         }
-        private void n_index_up_ValueChanged(object sender, EventArgs e)
-        {
-        }
-        #endregion
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             try
@@ -116,8 +126,7 @@ namespace final_db_forms
             }
             catch
             {
-                soldBindingSource.RemoveFilter();
-                sold_recipe_indexBindingSource.RemoveFilter();
+                reset_filters();
             }
             
         }
@@ -154,7 +163,7 @@ namespace final_db_forms
                                     {
                                         soldBindingSource.Filter = $"amount < '{n_index_up.Value}'";
                                         var indexes =get_data_from_fake_dgv();
-                                        plow_through(indexes);
+                                                    plow_through(indexes);
                                         break;
                                     }
                                     default:
@@ -165,7 +174,7 @@ namespace final_db_forms
                                             {
                                                 soldBindingSource.Filter = $"amount > '{n_index_up.Value}' OR amount < {n_index_down.Value}";
                                                 var indexes =get_data_from_fake_dgv();
-                                                plow_through(indexes);
+                                                                plow_through(indexes);
                                                 break;
                                             }
                                             default:
@@ -174,9 +183,9 @@ namespace final_db_forms
                                                 {
                                                     case true:
                                                     {
-                                                        soldBindingSource.Filter = $"amount = '{n_index_down.Value}' AND amount < {n_index_up.Value}";
+                                                        soldBindingSource.Filter = $"amount > '{n_index_down.Value}' AND amount < {n_index_up.Value}";
                                                         var indexes =get_data_from_fake_dgv();
-                                                        plow_through(indexes);
+                                                                            plow_through(indexes);
                                                         break;
                                                     }
                                                 }
@@ -196,15 +205,26 @@ namespace final_db_forms
                         break;
                     }
                 }
-                sold_recipe_indexBindingSource.Filter = stringbuilder;
+                switch (checkBox1.CheckState)
+                {
+                    case CheckState.Unchecked when checkBox2.CheckState == CheckState.Unchecked && checkBox3.CheckState == CheckState.Unchecked && checkBox4.CheckState == CheckState.Unchecked:
+                        apply_filter_by_date();
+                        break;
+                    default:
+                        sold_recipe_indexBindingSource.Filter = $"date = '{d_index.Value.Date}' AND (" + stringbuilder +")";
+                        break;
+                }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 soldBindingSource.RemoveFilter();
                 sold_recipe_indexBindingSource.RemoveFilter();
-                MessageBox.Show(Resources.nothing_found);
+                MessageBox.Show(e.Message);
+                
+                //MessageBox.Show(Resources.nothing_found);
             }
-            
+
+
             int[] get_data_from_fake_dgv()
             {
                 var indexes = new int[dgv_fake_index.RowCount-1];
@@ -247,7 +267,6 @@ namespace final_db_forms
                 emp_list.Items.Add(item);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             var stringbuilder = "";
@@ -297,6 +316,45 @@ namespace final_db_forms
                 }
             }
             return id_list;
+        }
+        private void checkBox3_CheckStateChanged(object sender, EventArgs e)
+        {
+            auto_check();
+        }
+        private void auto_check()
+        {
+            if (checkBox3.CheckState == CheckState.Unchecked)
+            {
+                groupBox3.Visible = true;
+            }
+            else
+            {
+                groupBox3.Visible = false;
+            }
+            if (checkBox1.CheckState == CheckState.Checked && checkBox2.CheckState==CheckState.Checked)
+            {
+                groupBox3.Visible = true;
+            }
+            else if (checkBox4.CheckState==CheckState.Checked)
+            {
+                groupBox3.Visible = true;
+            }
+            else
+            {
+                groupBox3.Visible = false;
+            }
+        }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            auto_check();
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            auto_check();
+        }
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            auto_check();
         }
     }
 }

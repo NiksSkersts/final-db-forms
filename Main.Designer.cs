@@ -66,6 +66,7 @@ namespace final_db_forms
             this.bs_pos = new System.Windows.Forms.BindingSource(this.components);
             this.positionsDataGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bs_sf = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.button_save = new System.Windows.Forms.ToolStripButton();
             this.add_emps = new System.Windows.Forms.ToolStripButton();
@@ -76,23 +77,24 @@ namespace final_db_forms
             this.button2 = new System.Windows.Forms.Button();
             this.emp_list = new System.Windows.Forms.CheckedListBox();
             this.dgv_sold_ro = new System.Windows.Forms.DataGridView();
+            this.idpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bs_price_not_fk = new System.Windows.Forms.BindingSource(this.components);
             this.idsalesforceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.bs_sf = new System.Windows.Forms.BindingSource(this.components);
             this.id_sales_force = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.amountDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.soldBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.index_range = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.index_from = new System.Windows.Forms.Label();
             this.index_to = new System.Windows.Forms.Label();
+            this.n_index_down = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.index_from = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.n_index_down = new System.Windows.Forms.NumericUpDown();
             this.n_index_up = new System.Windows.Forms.NumericUpDown();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dgv_fake_index = new System.Windows.Forms.DataGridView();
@@ -172,16 +174,18 @@ namespace final_db_forms
             ((System.ComponentModel.ISupportInitialize)(this.salesforcefkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_pos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tab_sales.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sold_ro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_price_not_fk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.index_range.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_index_down)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_index_up)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_fake_index)).BeginInit();
@@ -485,6 +489,11 @@ namespace final_db_forms
             label1.TabIndex = 0;
             label1.Text = "Filter Sales by Date";
             // 
+            // bs_sf
+            // 
+            this.bs_sf.DataMember = "sales_force";
+            this.bs_sf.DataSource = this.llu;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -589,10 +598,10 @@ namespace final_db_forms
             this.dgv_sold_ro.AutoGenerateColumns = false;
             this.dgv_sold_ro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sold_ro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpriceDataGridViewTextBoxColumn,
             this.idsalesforceDataGridViewTextBoxColumn,
             this.id_sales_force,
-            this.amountDataGridViewTextBoxColumn2,
-            this.idpriceDataGridViewTextBoxColumn});
+            this.amountDataGridViewTextBoxColumn2});
             this.dgv_sold_ro.DataSource = this.soldBindingSource;
             this.dgv_sold_ro.Location = new System.Drawing.Point(0, 0);
             this.dgv_sold_ro.Name = "dgv_sold_ro";
@@ -600,9 +609,28 @@ namespace final_db_forms
             this.dgv_sold_ro.Size = new System.Drawing.Size(614, 723);
             this.dgv_sold_ro.TabIndex = 0;
             // 
+            // idpriceDataGridViewTextBoxColumn
+            // 
+            this.idpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idpriceDataGridViewTextBoxColumn.DataPropertyName = "id_price";
+            this.idpriceDataGridViewTextBoxColumn.DataSource = this.bs_price_not_fk;
+            this.idpriceDataGridViewTextBoxColumn.DisplayMember = "price";
+            this.idpriceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.idpriceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idpriceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.idpriceDataGridViewTextBoxColumn.Name = "idpriceDataGridViewTextBoxColumn";
+            this.idpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idpriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idpriceDataGridViewTextBoxColumn.ValueMember = "id_price";
+            // 
+            // bs_price_not_fk
+            // 
+            this.bs_price_not_fk.DataMember = "price";
+            this.bs_price_not_fk.DataSource = this.llu;
+            // 
             // idsalesforceDataGridViewTextBoxColumn
             // 
-            this.idsalesforceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idsalesforceDataGridViewTextBoxColumn.DataPropertyName = "id_sales_force";
             this.idsalesforceDataGridViewTextBoxColumn.DataSource = this.bs_sf;
             this.idsalesforceDataGridViewTextBoxColumn.DisplayMember = "name";
@@ -614,11 +642,6 @@ namespace final_db_forms
             this.idsalesforceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.idsalesforceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.idsalesforceDataGridViewTextBoxColumn.ValueMember = "employee_id";
-            // 
-            // bs_sf
-            // 
-            this.bs_sf.DataMember = "sales_force";
-            this.bs_sf.DataSource = this.llu;
             // 
             // id_sales_force
             // 
@@ -642,21 +665,6 @@ namespace final_db_forms
             this.amountDataGridViewTextBoxColumn2.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn2.Name = "amountDataGridViewTextBoxColumn2";
             this.amountDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // idpriceDataGridViewTextBoxColumn
-            // 
-            this.idpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idpriceDataGridViewTextBoxColumn.DataPropertyName = "id_price";
-            this.idpriceDataGridViewTextBoxColumn.DataSource = this.bs_price;
-            this.idpriceDataGridViewTextBoxColumn.DisplayMember = "price";
-            this.idpriceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idpriceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.idpriceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.idpriceDataGridViewTextBoxColumn.Name = "idpriceDataGridViewTextBoxColumn";
-            this.idpriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idpriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idpriceDataGridViewTextBoxColumn.ValueMember = "id_price";
             // 
             // soldBindingSource
             // 
@@ -692,14 +700,12 @@ namespace final_db_forms
             // 
             // index_range
             // 
+            this.index_range.Controls.Add(this.groupBox3);
             this.index_range.Controls.Add(this.label7);
-            this.index_range.Controls.Add(this.index_to);
             this.index_range.Controls.Add(this.label5);
             this.index_range.Controls.Add(this.checkBox4);
-            this.index_range.Controls.Add(this.index_from);
             this.index_range.Controls.Add(this.checkBox3);
             this.index_range.Controls.Add(this.checkBox2);
-            this.index_range.Controls.Add(this.n_index_down);
             this.index_range.Controls.Add(this.n_index_up);
             this.index_range.Controls.Add(this.checkBox1);
             this.index_range.Location = new System.Drawing.Point(6, 119);
@@ -709,6 +715,43 @@ namespace final_db_forms
             this.index_range.TabStop = false;
             this.index_range.Text = "Range";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.index_from);
+            this.groupBox3.Controls.Add(this.index_to);
+            this.groupBox3.Controls.Add(this.n_index_down);
+            this.groupBox3.Location = new System.Drawing.Point(186, 2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(106, 85);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            // 
+            // index_from
+            // 
+            this.index_from.AutoSize = true;
+            this.index_from.Location = new System.Drawing.Point(16, 24);
+            this.index_from.Name = "index_from";
+            this.index_from.Size = new System.Drawing.Size(30, 13);
+            this.index_from.TabIndex = 8;
+            this.index_from.Text = "from:";
+            // 
+            // index_to
+            // 
+            this.index_to.AutoSize = true;
+            this.index_to.Location = new System.Drawing.Point(16, 72);
+            this.index_to.Name = "index_to";
+            this.index_to.Size = new System.Drawing.Size(19, 13);
+            this.index_to.TabIndex = 9;
+            this.index_to.Text = "to:";
+            // 
+            // n_index_down
+            // 
+            this.n_index_down.DecimalPlaces = 3;
+            this.n_index_down.Location = new System.Drawing.Point(14, 40);
+            this.n_index_down.Name = "n_index_down";
+            this.n_index_down.Size = new System.Drawing.Size(92, 20);
+            this.n_index_down.TabIndex = 6;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -717,15 +760,6 @@ namespace final_db_forms
             this.label7.Size = new System.Drawing.Size(155, 13);
             this.label7.TabIndex = 9;
             this.label7.Text = "(Selecting both = Invert Range)";
-            // 
-            // index_to
-            // 
-            this.index_to.AutoSize = true;
-            this.index_to.Location = new System.Drawing.Point(199, 51);
-            this.index_to.Name = "index_to";
-            this.index_to.Size = new System.Drawing.Size(19, 13);
-            this.index_to.TabIndex = 9;
-            this.index_to.Text = "to:";
             // 
             // label5
             // 
@@ -745,15 +779,7 @@ namespace final_db_forms
             this.checkBox4.TabIndex = 3;
             this.checkBox4.Text = "Range";
             this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // index_from
-            // 
-            this.index_from.AutoSize = true;
-            this.index_from.Location = new System.Drawing.Point(196, 14);
-            this.index_from.Name = "index_from";
-            this.index_from.Size = new System.Drawing.Size(30, 13);
-            this.index_from.TabIndex = 8;
-            this.index_from.Text = "from:";
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -766,6 +792,7 @@ namespace final_db_forms
             this.checkBox3.TabIndex = 2;
             this.checkBox3.Text = "Equals";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckStateChanged += new System.EventHandler(this.checkBox3_CheckStateChanged);
             // 
             // checkBox2
             // 
@@ -776,23 +803,15 @@ namespace final_db_forms
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "Less Than";
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // n_index_down
-            // 
-            this.n_index_down.DecimalPlaces = 3;
-            this.n_index_down.Location = new System.Drawing.Point(199, 30);
-            this.n_index_down.Name = "n_index_down";
-            this.n_index_down.Size = new System.Drawing.Size(92, 20);
-            this.n_index_down.TabIndex = 6;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // n_index_up
             // 
             this.n_index_up.DecimalPlaces = 3;
-            this.n_index_up.Location = new System.Drawing.Point(196, 67);
+            this.n_index_up.Location = new System.Drawing.Point(200, 93);
             this.n_index_up.Name = "n_index_up";
             this.n_index_up.Size = new System.Drawing.Size(92, 20);
             this.n_index_up.TabIndex = 2;
-            this.n_index_up.ValueChanged += new System.EventHandler(this.n_index_up_ValueChanged);
             // 
             // checkBox1
             // 
@@ -803,6 +822,7 @@ namespace final_db_forms
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "More than";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // dgv_fake_index
             // 
@@ -1195,19 +1215,22 @@ namespace final_db_forms
             ((System.ComponentModel.ISupportInitialize)(this.salesforcefkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_pos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tab_sales.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sold_ro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_sf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_price_not_fk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soldBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.index_range.ResumeLayout(false);
             this.index_range.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_index_down)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_index_up)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_fake_index)).EndInit();
@@ -1330,12 +1353,14 @@ namespace final_db_forms
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckedListBox emp_list;
         private System.Windows.Forms.DataGridView dgv_sold_ro;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource bs_price_not_fk;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idpriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn idsalesforceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn id_sales_force;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn idpriceDataGridViewTextBoxColumn;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 
