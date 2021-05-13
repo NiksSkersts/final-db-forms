@@ -28,6 +28,7 @@ namespace final_db_forms
             dgv_index.AutoGenerateColumns = false;
             dataGridViewTextBoxColumn1.Visible = false;
             dgv_fake_index.Visible = false;
+            id_n_o_b.Visible = false;
         }
         private void load_ds()
         {

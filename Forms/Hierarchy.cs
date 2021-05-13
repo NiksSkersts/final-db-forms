@@ -34,7 +34,6 @@ namespace final_db_forms.Forms
         private DataGridViewTextBoxColumn surname;
         private DataGridViewComboBoxColumn id_position;
         private TableAdapterManager tads;
-
         public Hierarchy(llu _ds,TableAdapterManager ta_ds)
         {
             ds = _ds;
@@ -77,36 +76,7 @@ namespace final_db_forms.Forms
         private void tv_refresh()
         {
             tv.Nodes.Clear();
-            SubLevel(0, null)
-        ;
-        }
-        private void tv_hierarchy_ItemDrag(object sender, ItemDragEventArgs e){if (e.Button == MouseButtons.Left) DoDragDrop(e.Item, DragDropEffects.Move);}
-        private void tv_hierarchy_DragDrop(object sender, DragEventArgs e)
-        {
-            var targetPoint = tv.PointToClient(new Point(e.X, e.Y));
-            var targetNode = tv.GetNodeAt(targetPoint);
-            var draggedNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
-            if (draggedNode.Equals(targetNode) || ContainsNode(draggedNode, targetNode)) return;
-            if (e.Effect == DragDropEffects.Move)
-            {
-                draggedNode.Remove();
-                targetNode.Nodes.Add(draggedNode);
-            }
-            targetNode.Expand();
-        }
-        private static bool ContainsNode(TreeNode node1, TreeNode node2)
-        {
-            if (node2.Parent == null) return false;
-            return node2.Parent.Equals(node1) || ContainsNode(node1, node2.Parent);
-        }
-        private void tv_hierarchy_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = e.AllowedEffect;
-        }
-        private void tv_hierarchy_DragOver(object sender, DragEventArgs e)
-        {
-            var targetPoint = tv.PointToClient(new Point(e.X, e.Y));
-            tv.SelectedNode = tv.GetNodeAt(targetPoint);
+            SubLevel(0, null);
         }
         private void Hierarchy_Load(object sender, EventArgs e)
         {
@@ -127,13 +97,30 @@ namespace final_db_forms.Forms
                 call_update();
             }
         }
-
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             call_update();
             Close();
         }
+        private void tv_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            tv.ExpandAll();
+            if (e.Node.Name != "")
+                index_number = Convert.ToInt32(e.Node.Name);
 
+            bssf.Filter = "id_position =" + index_number;
+        }
+        private void dgv_sf_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgv_sf.CurrentRow != null)
+            {
+                dgv_sf.CurrentRow.Cells[2].Value = index_number;
+            }
+        }
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            call_update();
+        }
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -264,28 +251,6 @@ namespace final_db_forms.Forms
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void tv_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            tv.ExpandAll();
-            if (e.Node.Name != "")
-                index_number = Convert.ToInt32(e.Node.Name);
-
-            bssf.Filter = "id_position =" + index_number;
-        }
-
-        private void dgv_sf_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            if (dgv_sf.CurrentRow != null)
-            {
-                dgv_sf.CurrentRow.Cells[2].Value = index_number;
-            }
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            call_update();
         }
     }
 }
