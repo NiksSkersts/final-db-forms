@@ -205,9 +205,6 @@ namespace final_db_forms
             {
                 soldBindingSource.RemoveFilter();
                 sold_recipe_indexBindingSource.RemoveFilter();
-                MessageBox.Show(e.Message);
-                
-                //MessageBox.Show(Resources.nothing_found);
             }
 
 
@@ -242,7 +239,6 @@ namespace final_db_forms
             e.Cancel = true;
             soldBindingSource.RemoveFilter();
             sold_recipe_indexBindingSource.RemoveFilter();
-            MessageBox.Show(Resources.nothing_found);
             
         }
         private void init_listbox()

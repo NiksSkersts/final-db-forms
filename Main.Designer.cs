@@ -77,11 +77,7 @@ namespace final_db_forms
             this.button2 = new System.Windows.Forms.Button();
             this.emp_list = new System.Windows.Forms.CheckedListBox();
             this.dgv_sold_ro = new System.Windows.Forms.DataGridView();
-            this.idpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.bs_price_not_fk = new System.Windows.Forms.BindingSource(this.components);
-            this.idsalesforceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.id_sales_force = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.amountDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -149,6 +145,10 @@ namespace final_db_forms
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.soldfk1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.idsalesforceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.id_sales_force = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idpriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.amountDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_ing = new System.Windows.Forms.TabPage();
             tab_r = new System.Windows.Forms.TabPage();
             tab_emp = new System.Windows.Forms.TabPage();
@@ -212,6 +212,7 @@ namespace final_db_forms
             // ingredientsDataGridView
             // 
             this.ingredientsDataGridView.AutoGenerateColumns = false;
+            this.ingredientsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.ingredientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ingredientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn1});
@@ -246,6 +247,7 @@ namespace final_db_forms
             // food_categoriesDataGridView
             // 
             this.food_categoriesDataGridView.AutoGenerateColumns = false;
+            this.food_categoriesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.food_categoriesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.food_categoriesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn});
@@ -280,6 +282,7 @@ namespace final_db_forms
             // nep_ingredientsDataGridView
             // 
             this.nep_ingredientsDataGridView.AutoGenerateColumns = false;
+            this.nep_ingredientsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.nep_ingredientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.nep_ingredientsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.priceDataGridViewTextBoxColumn});
@@ -309,6 +312,7 @@ namespace final_db_forms
             // priceDataGridView
             // 
             this.priceDataGridView.AutoGenerateColumns = false;
+            this.priceDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.priceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.priceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.amountDataGridViewTextBoxColumn});
@@ -334,6 +338,7 @@ namespace final_db_forms
             // recipesDataGridView
             // 
             this.recipesDataGridView.AutoGenerateColumns = false;
+            this.recipesDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.recipesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.recipesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_n_o_b,
@@ -389,6 +394,7 @@ namespace final_db_forms
             // name_of_breadDataGridView
             // 
             this.name_of_breadDataGridView.AutoGenerateColumns = false;
+            this.name_of_breadDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.name_of_breadDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.name_of_breadDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn2});
@@ -421,6 +427,7 @@ namespace final_db_forms
             // sales_forceDataGridView
             // 
             this.sales_forceDataGridView.AutoGenerateColumns = false;
+            this.sales_forceDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.sales_forceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sales_forceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn4,
@@ -461,6 +468,7 @@ namespace final_db_forms
             // positionsDataGridView
             // 
             this.positionsDataGridView.AutoGenerateColumns = false;
+            this.positionsDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.positionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.positionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn3});
@@ -596,11 +604,12 @@ namespace final_db_forms
             // 
             this.dgv_sold_ro.AllowUserToAddRows = false;
             this.dgv_sold_ro.AutoGenerateColumns = false;
+            this.dgv_sold_ro.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv_sold_ro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sold_ro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpriceDataGridViewTextBoxColumn,
             this.idsalesforceDataGridViewTextBoxColumn,
             this.id_sales_force,
+            this.idpriceDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn2});
             this.dgv_sold_ro.DataSource = this.soldBindingSource;
             this.dgv_sold_ro.Location = new System.Drawing.Point(0, 0);
@@ -609,62 +618,10 @@ namespace final_db_forms
             this.dgv_sold_ro.Size = new System.Drawing.Size(614, 723);
             this.dgv_sold_ro.TabIndex = 0;
             // 
-            // idpriceDataGridViewTextBoxColumn
-            // 
-            this.idpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idpriceDataGridViewTextBoxColumn.DataPropertyName = "id_price";
-            this.idpriceDataGridViewTextBoxColumn.DataSource = this.bs_price_not_fk;
-            this.idpriceDataGridViewTextBoxColumn.DisplayMember = "price";
-            this.idpriceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idpriceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.idpriceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.idpriceDataGridViewTextBoxColumn.Name = "idpriceDataGridViewTextBoxColumn";
-            this.idpriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idpriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idpriceDataGridViewTextBoxColumn.ValueMember = "id_price";
-            // 
             // bs_price_not_fk
             // 
             this.bs_price_not_fk.DataMember = "price";
             this.bs_price_not_fk.DataSource = this.llu;
-            // 
-            // idsalesforceDataGridViewTextBoxColumn
-            // 
-            this.idsalesforceDataGridViewTextBoxColumn.DataPropertyName = "id_sales_force";
-            this.idsalesforceDataGridViewTextBoxColumn.DataSource = this.bs_sf;
-            this.idsalesforceDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.idsalesforceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.idsalesforceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.idsalesforceDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.idsalesforceDataGridViewTextBoxColumn.Name = "idsalesforceDataGridViewTextBoxColumn";
-            this.idsalesforceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idsalesforceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idsalesforceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idsalesforceDataGridViewTextBoxColumn.ValueMember = "employee_id";
-            // 
-            // id_sales_force
-            // 
-            this.id_sales_force.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_sales_force.DataPropertyName = "id_sales_force";
-            this.id_sales_force.DataSource = this.bs_sf;
-            this.id_sales_force.DisplayMember = "surname";
-            this.id_sales_force.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.id_sales_force.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.id_sales_force.HeaderText = "Surname";
-            this.id_sales_force.Name = "id_sales_force";
-            this.id_sales_force.ReadOnly = true;
-            this.id_sales_force.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_sales_force.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id_sales_force.ValueMember = "employee_id";
-            // 
-            // amountDataGridViewTextBoxColumn2
-            // 
-            this.amountDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.amountDataGridViewTextBoxColumn2.DataPropertyName = "amount";
-            this.amountDataGridViewTextBoxColumn2.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn2.Name = "amountDataGridViewTextBoxColumn2";
-            this.amountDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // soldBindingSource
             // 
@@ -883,6 +840,7 @@ namespace final_db_forms
             this.dgv_index.AutoGenerateColumns = false;
             this.dgv_index.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_index.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_index.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv_index.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_index.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1183,6 +1141,58 @@ namespace final_db_forms
             this.soldfk1BindingSource.DataMember = "sold_fk_1";
             this.soldfk1BindingSource.DataSource = this.bs_sf;
             // 
+            // idsalesforceDataGridViewTextBoxColumn
+            // 
+            this.idsalesforceDataGridViewTextBoxColumn.DataPropertyName = "id_sales_force";
+            this.idsalesforceDataGridViewTextBoxColumn.DataSource = this.bs_sf;
+            this.idsalesforceDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.idsalesforceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.idsalesforceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idsalesforceDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.idsalesforceDataGridViewTextBoxColumn.Name = "idsalesforceDataGridViewTextBoxColumn";
+            this.idsalesforceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idsalesforceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idsalesforceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idsalesforceDataGridViewTextBoxColumn.ValueMember = "employee_id";
+            // 
+            // id_sales_force
+            // 
+            this.id_sales_force.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_sales_force.DataPropertyName = "id_sales_force";
+            this.id_sales_force.DataSource = this.bs_sf;
+            this.id_sales_force.DisplayMember = "surname";
+            this.id_sales_force.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.id_sales_force.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.id_sales_force.HeaderText = "Surname";
+            this.id_sales_force.Name = "id_sales_force";
+            this.id_sales_force.ReadOnly = true;
+            this.id_sales_force.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_sales_force.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_sales_force.ValueMember = "employee_id";
+            // 
+            // idpriceDataGridViewTextBoxColumn
+            // 
+            this.idpriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idpriceDataGridViewTextBoxColumn.DataPropertyName = "id_price";
+            this.idpriceDataGridViewTextBoxColumn.DataSource = this.bs_price_not_fk;
+            this.idpriceDataGridViewTextBoxColumn.DisplayMember = "price";
+            this.idpriceDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.idpriceDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idpriceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.idpriceDataGridViewTextBoxColumn.Name = "idpriceDataGridViewTextBoxColumn";
+            this.idpriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpriceDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idpriceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.idpriceDataGridViewTextBoxColumn.ValueMember = "id_price";
+            // 
+            // amountDataGridViewTextBoxColumn2
+            // 
+            this.amountDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.amountDataGridViewTextBoxColumn2.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn2.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn2.Name = "amountDataGridViewTextBoxColumn2";
+            this.amountDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1355,11 +1365,11 @@ namespace final_db_forms
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource bs_price_not_fk;
-        private System.Windows.Forms.DataGridViewComboBoxColumn idpriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridViewComboBoxColumn idsalesforceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn id_sales_force;
+        private System.Windows.Forms.DataGridViewComboBoxColumn idpriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

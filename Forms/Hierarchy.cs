@@ -153,6 +153,7 @@ namespace final_db_forms.Forms
             // dgv_sf
             // 
             this.dgv_sf.AutoGenerateColumns = false;
+            this.dgv_sf.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv_sf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sf.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
